@@ -1,0 +1,77 @@
+name: Qur'an Ayah of the Day
+description: Generate a daily Arabic and English Qur'an ayah SVG for a GitHub profile or README.
+author: Natasha Machate
+
+branding:
+  icon: book-open
+  color: green
+
+inputs:
+  output-path:
+    description: Path where the generated SVG will be written.
+    required: false
+    default: assets/quran-ayah.svg
+  dark-output-path:
+    description: Optional second output. If set, both variants use the same verse and the main output is light.
+    default: ''
+  readme-path:
+    description: Existing README to update inside the ayah markers; appends a block if no markers are present.
+    default: ''
+  theme:
+    description: 'Card theme: auto, light or dark.'
+    required: false
+    default: auto
+  title:
+    description: Heading displayed on the card.
+    required: false
+    default: Ayah of the Day
+  translation:
+    description: Tanzil edition ID or itani, sahih, pickthall. Leave blank to use the default for lang.
+    required: false
+    default: ''
+  translation-name:
+    description: Translator name and credit for a custom Tanzil edition.
+    required: false
+    default: ''
+  bg:
+    description: Solid or transparent background. Transparent requires an explicit light or dark theme.
+    default: solid
+  palette:
+    description: 'Banner palette: neutral, green-gold or transparent.'
+    default: neutral
+  max-length:
+    description: Maximum grapheme count for eligible daily verses. 0 means unlimited; fixed references stay complete.
+    default: '0'
+  width:
+    description: Card width in pixels, from 320 to 1600. Height grows with content.
+    default: '640'
+  animate:
+    description: Reveal solid Arabic ink with pen-like strokes while the translation types in, unless reduced motion is preferred.
+    default: 'true'
+  show-translation:
+    description: Show the translation below the Arabic.
+    default: 'true'
+  lang:
+    description: Default Tanzil translation language, en, id or de. An explicit translation overrides it.
+    default: en
+  random:
+    description: Select a random curated ayah on each run instead of the UTC daily selection.
+    default: 'false'
+  verse:
+    description: Optional fixed chapter:verse reference. Leave empty for the daily selection.
+    required: false
+    default: ''
+
+outputs:
+  reference:
+    description: Generated chapter:verse reference.
+  surah:
+    description: English surah name.
+  verse-url:
+    description: Direct link to the chosen ayah on Quran.com.
+  output-path:
+    description: Path to the generated SVG.
+
+runs:
+  using: node24
+  main: dist/action.mjs

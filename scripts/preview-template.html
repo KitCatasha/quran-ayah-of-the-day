@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ayah card preview</title>
+<style>
+body{margin:0;padding:32px 20px;background:#e8e5dd;color:#19392e;font:15px system-ui,sans-serif}
+main{max-width:640px;margin:auto}h1{font:28px Georgia,serif;margin-bottom:8px}p{line-height:1.6}
+figure{margin:28px 0}figcaption{margin-bottom:10px;font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+img{display:block;width:100%;height:auto}.checker{background:repeating-conic-gradient(#f3eee3 0% 25%,#e7e0d2 0% 50%) 0/24px 24px;border-radius:8px}
+.dark-checker{background:repeating-conic-gradient(#0d1117 0% 25%,#171e26 0% 50%) 0/24px 24px;border-radius:8px}
+.dark-surface{background:#0d1117;border-radius:8px}
+.source-credit{font-size:11px}.source-credit a{color:inherit}
+@media(prefers-color-scheme:dark){body{background:#0d1117;color:#e6e0d4}}
+</style>
+<main><h1>Ayah of the Day</h1><p>Local banner preview · Ash-Sharh 94:5. Reload to replay the Arabic pen strokes and English typing. The verse in this demo is fixed.</p>
+<figure><figcaption>Light · parchment</figcaption><img src="assets/preview-light.svg" alt="Parchment ayah card"></figure>
+<figure><figcaption>Dark · charcoal and gold</figcaption><img src="assets/preview-dark.svg" alt="Dark neutral ayah card"></figure>
+<figure><figcaption>Optional · green and gold</figcaption><img src="assets/preview-green-gold.svg" alt="Green and gold ayah card"></figure>
+<figure><figcaption>Transparent light · only for light surfaces</figcaption><div class="checker"><img src="assets/preview-transparent-light.svg" alt="Transparent ayah with dark green text on a light surface"></div></figure>
+<figure><figcaption>Transparent dark · cream text for dark surfaces</figcaption><div class="dark-checker"><img src="assets/preview-transparent-dark.svg" alt="Transparent ayah with cream text on a dark surface"></div></figure>
+<p>For GitHub, generate both transparent files and embed them with a light/dark picture pair. Do not embed the light file alone on an unknown background.</p>
+<figure><figcaption>Arabic only · light</figcaption><img src="assets/preview-arabic-only-light.svg" alt="Arabic-only parchment card"></figure>
+<figure><figcaption>Arabic only · dark</figcaption><div class="dark-surface"><img src="assets/preview-arabic-only-dark.svg" alt="Arabic-only dark neutral card"></div></figure>
+<figure><figcaption>Arabic only · local picture switching demo</figcaption><picture>
+<source media="(prefers-color-scheme: dark)" srcset="assets/preview-arabic-only-dark.svg">
+<source media="(prefers-color-scheme: light)" srcset="assets/preview-arabic-only-light.svg">
+<img src="assets/preview-arabic-only-light.svg" alt="Arabic-only card selected by the browser color preference">
+</picture></figure>
+<details><summary>Long ayahs · full text, static samples</summary>
+<figure><figcaption>Al-Baqarah · 2:255</figcaption><a href="https://quran.com/2/255"><img loading="lazy" src="assets/preview-2-255.svg" alt="Al-Baqarah 2:255, Arabic with English translation"></a></figure>
+<figure><figcaption>Al-Baqarah · 2:282</figcaption><a href="https://quran.com/2/282"><img loading="lazy" src="assets/preview-2-282.svg" alt="Al-Baqarah 2:282, Arabic with English translation"></a></figure>
+</details>
+<p class="source-credit"><a href="https://tanzil.net/">Tanzil Project</a> · <a href="https://tanzil.net/trans/">Saheeh International</a></p>
+</main></html>

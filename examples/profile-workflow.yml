@@ -1,0 +1,41 @@
+name: Update Qur'an ayah card
+
+on:
+  schedule:
+    - cron: '17 0 * * *'
+  workflow_dispatch:
+    inputs:
+      verse:
+        description: 'Optional test verse, e.g. 94:5 or 2:255. Leave blank for the daily ayah.'
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-ayah
+  cancel-in-progress: true
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generate both cards and update the linked README banner
+        uses: KitCatasha/quran-ayah-of-the-day@v1
+        with:
+          output-path: assets/ayah-light.svg
+          dark-output-path: assets/ayah-dark.svg
+          readme-path: README.md
+          verse: ${{ inputs.verse }}
+      - name: Commit the new card
+        run: |
+          git add README.md assets/ayah-light.svg assets/ayah-dark.svg
+          if git diff --cached --quiet -- README.md assets/ayah-light.svg assets/ayah-dark.svg; then
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Update daily Qur'an ayah"
+          git push
