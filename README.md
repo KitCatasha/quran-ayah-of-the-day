@@ -3,7 +3,7 @@
 A daily Qur’an verse for your GitHub profile, with animated Arabic calligraphy and an English translation that types in alongside it. Click the banner to read the verse on Quran.com.
 
 <!-- ayah-of-the-day:start -->
-<a href="https://quran.com/40/60"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/ayah-dark.svg"><img src="assets/ayah-light.svg" alt="Daily Quran ayah, Ghafir 40:60, Arabic with Saheeh International translation. Read on Quran.com." width="100%"></picture></a>
+<a href="https://quran.com/41/34"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/ayah-dark.svg"><img src="assets/ayah-light.svg" alt="Daily Quran ayah, Fussilat 41:34, Arabic with Saheeh International translation. Read on Quran.com." width="100%"></picture></a>
 
 <sub><a href="https://tanzil.net/">Tanzil Project</a> · <a href="https://tanzil.net/trans/">Saheeh International</a></sub>
 <!-- ayah-of-the-day:end -->
